@@ -11,14 +11,12 @@
   <div id="slider"></div>
   
   <script src="./slider.js"></script>
-  <!-- <script src="index.js"></script> -->
   <script>
-    import slider from './slider';
     fetch('/data/data.json')
       .then(response => response.json())
       .then(data => {
-        // const slider = new Slider("slider", data)
-        // slider.initialize();
+        const slider = new Slider("slider", data)
+        slider.initialize();
       });
   </script>
 </body>

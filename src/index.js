@@ -11,7 +11,7 @@ export default class Slider {
     this.sliderElement = document.getElementById(this.el);
     this.data.forEach(slide => {
       const slideImg = document.createElement("img");
-      sliderImg.src = slide.imgUrl;
+      slideImg.src = slide.imgUrl;
       const slideTitle = document.createElement('h1');
       slideTitle.innerText = slide.caption;
       const slideLink = document.createElement('a');
@@ -24,3 +24,5 @@ export default class Slider {
     }) 
   }
 }
+
+window.Slider = Slider;
