@@ -1,5 +1,25 @@
 .slider {
-  background-color: $bg-color;
-  height: 300px;
-  width: 100%;
+  display: flex;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__arrow-left {
+    color: $arrow-color;
+    cursor: pointer;
+    font-size: $arrow-size;
+    left: 15px;
+    position: fixed;
+    top: 10%;
+  }
+
+  &__arrow-right {
+    color: $arrow-color;
+    cursor: pointer;
+    font-size: $arrow-size;
+    position: fixed;
+    right: 15px;
+    top: 10%;
+  }
 }
