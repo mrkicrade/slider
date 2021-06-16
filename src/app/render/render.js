@@ -1,9 +1,9 @@
 export default function render () {
   this.sliderElement = document.getElementById(this.el);
   this.sliderElement.className = 'slider';
-  const sliders_container = document.createElement('div');
-  sliders_container.className = 'slider__sliders-container';
-  this.sliderElement.appendChild(sliders_container);
+  this.slidersContainer = document.createElement('div');
+  this.slidersContainer.className = 'slider__sliders-container';
+  this.sliderElement.appendChild(this.slidersContainer);
   this.data.forEach(slide => {
     const slideImg = document.createElement("img");
     slideImg.src = slide.imgUrl;
@@ -17,10 +17,8 @@ export default function render () {
     const slideContainer = document.createElement('div');
     slideContainer.className = 'slider__container';
     slideContainer.appendChild(slideLink);
-    sliders_container.appendChild(slideContainer);
+    this.slidersContainer.appendChild(slideContainer);
   })
-  // console.log(sliders_container); 
-  // console.log(this.sliderElement); 
   this.leftArrow.classList.add('slider__arrow-left', 'fas', 'fa-chevron-left');
   this.rightArrow.classList.add('slider__arrow-right', 'fas', 'fa-chevron-right');
   this.sliderElement.append(this.leftArrow);
