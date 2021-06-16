@@ -8,7 +8,7 @@ class Slider {
     this.leftArrow = document.createElement('i');
     this.rightArrow = document.createElement('i');
     this.count = 0;
-    this.initialize = core;
+    this.initialize = core; // metodu initialize smo premestili u poseban fajl
   }
 }
 

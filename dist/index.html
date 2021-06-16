@@ -13,12 +13,14 @@
   
   <script src="./slider.js"></script>
   <script>
-    fetch('/data/data.json')
-      .then(response => response.json())
-      .then(data => {
-        const slider = new Slider("slider", data) // slider je el, data je data
-        slider.initialize();
-      });
+    document.addEventListener('DOMContentLoaded', ()=> {
+      fetch('/data/data.json') // увек се учитава овде јер АПИ може да касни
+        .then(response => response.json())
+        .then(data => { //data je ceo json niz a ne pojedinacni objekat
+          const slider = new Slider("slider", data) // slider je el, data je data
+          slider.initialize();
+        });
+    })
   </script>
 </body>
 </html>

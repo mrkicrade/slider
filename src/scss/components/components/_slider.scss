@@ -1,7 +1,7 @@
 .slider {
-  display: flex;
-
-  &__container {
+  &__sliders-container {
+    display: flex;
+    position: relative;
     text-align: center;
   }
 
@@ -10,7 +10,7 @@
     cursor: pointer;
     font-size: $arrow-size;
     left: 15px;
-    position: fixed;
+    position: absolute;
     top: 10%;
   }
 
@@ -18,8 +18,26 @@
     color: $arrow-color;
     cursor: pointer;
     font-size: $arrow-size;
-    position: fixed;
+    position: absolute;
     right: 15px;
     top: 10%;
   }
+
+  // &__arrow-left {
+  //   color: $arrow-color;
+  //   cursor: pointer;
+  //   font-size: $arrow-size;
+  //   left: 15px;
+  //   position: fixed;
+  //   top: 10%;
+  // }
+
+  // &__arrow-right {
+  //   color: $arrow-color;
+  //   cursor: pointer;
+  //   font-size: $arrow-size;
+  //   position: fixed;
+  //   right: 15px;
+  //   top: 10%;
+  // }
 }
