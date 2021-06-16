@@ -14,8 +14,8 @@ export function moveLeft () {
   this.sliderElement.style.visibility = 'visible';
   this.sliderElement.style.transition = '1s';
   this.sliderElement.style.transform = `translateX(${this.count + 100}%)`;
-  this.sliderElement.count += 100;
+  this.count += 100;
   if (this.count === 0) {
-    this.leftArrow.display = 'none';
+    this.leftArrow.style.display = 'none';
   }
 }

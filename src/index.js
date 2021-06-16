@@ -1,5 +1,5 @@
 import './scss/main.scss';
-import core from './app/core/core'
+import core from './app/core/core';
 
 class Slider {
   constructor (el, data) {
@@ -8,7 +8,7 @@ class Slider {
     this.leftArrow = document.createElement('i');
     this.rightArrow = document.createElement('i');
     this.count = 0;
-    this.initialize = core
+    this.initialize = core;
   }
 }
 
