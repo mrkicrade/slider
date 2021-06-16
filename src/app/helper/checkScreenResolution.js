@@ -1,22 +1,36 @@
 
-// const checkMediaQuery = () => {
- 
-//   if (window.innerWidth <= 767) {
-//     console.log('768');
-//   }
+export default function checkMediaQuery () {
 
-//   if (window.innerWidth >= 768 && window.innerWidth < 1023) {
-//     console.log('1023');
-//   }
+  console.log(this);
+  // console.log(this.count);
+  // console.log(this.data);
 
-//   if (window.innerWidth >= 1024) {
-//     console.log('1024');
-//   }
+  if (this.innerWidth <= 767) {
+    console.log('768');
+  }
 
-// }
+  if (this.innerWidth >= 768 && this.innerWidth < 1023) {
+    console.log('1023');
+  }
 
-// Initial check
-// checkMediaQuery();
+  if (this.innerWidth >= 1024) {
+    console.log(this.count);
+    console.log(1024);
+    
+    // if (this.count === -200) {
+    //   this.rightArrowBtn.style.display = 'none';
+    // }
+
+    // if (this.count === 0) {
+    //   this.leftArrowBtn.style.display = 'none';
+    // }
+  }
+
+}
+
+//Initial check
+
+checkMediaQuery.bind(this);
 
 // Add a listener for when the window resizes
-// window.addEventListener('resize', checkMediaQuery);
+window.addEventListener('resize', checkMediaQuery);

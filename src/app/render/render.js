@@ -4,6 +4,19 @@ export default function render () {
   this.slidersContainer = document.createElement('div');
   this.slidersContainer.className = 'slider__sliders-container';
   this.sliderElement.appendChild(this.slidersContainer);
+  this.leftArrowBtn = document.createElement('button');
+  this.leftArrowBtn.className = 'slider__left-arrow-btn';
+  this.rightArrowBtn = document.createElement('button');
+  this.rightArrowBtn.className = 'slider__right-arrow-btn';
+  this.sliderElement.appendChild(this.leftArrowBtn);
+  this.sliderElement.appendChild(this.rightArrowBtn);
+  this.leftArrow.classList.add('slider__left-arrow-btn__left', 'fas', 'fa-chevron-left');
+  this.rightArrow.classList.add('slider__right-arrow-btn__right', 'fas', 'fa-chevron-right');
+  this.leftArrowBtn.appendChild(this.leftArrow);
+  // this.sliderElement.append(this.leftArrow);
+  this.rightArrowBtn.appendChild(this.rightArrow);
+  // this.sliderElement.append(this.rightArrow);
+  this.leftArrowBtn.style.display = 'none';
   this.data.forEach(slide => {
     const slideImg = document.createElement("img");
     slideImg.src = slide.imgUrl;
@@ -19,9 +32,4 @@ export default function render () {
     slideContainer.appendChild(slideLink);
     this.slidersContainer.appendChild(slideContainer);
   })
-  this.leftArrow.classList.add('slider__arrow-left', 'fas', 'fa-chevron-left');
-  this.rightArrow.classList.add('slider__arrow-right', 'fas', 'fa-chevron-right');
-  this.sliderElement.append(this.leftArrow);
-  this.sliderElement.append(this.rightArrow);
-  this.leftArrow.style.display = 'none';
 }

@@ -1,9 +1,11 @@
 import { moveRight, moveLeft } from '../events/events';
 import render from '../render/render';
-// import checkScreenResolution from '../helper/checkScreenResolution';
+import checkScreenResolution from '../helper/checkScreenResolution';
 
 export default function initialize () {
     // provera rezolucije checkScreenResolution
+    this.checkScreenResolution = checkScreenResolution;
+    this.checkScreenResolution();
     this.render = render;
     this.render();
     this.moveLeft = moveLeft;

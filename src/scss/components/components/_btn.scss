@@ -1,0 +1,41 @@
+.slider {
+  &__left-arrow-btn {
+    background-color: $btn-bgc;
+    border: 0;
+    border-radius: 50px;
+    height: 5vw;
+    left: 1vw;
+    position: absolute;
+    top: 2.5vw;
+    width: 5vw;
+
+    &__left {
+      color: $arrow-color;
+      cursor: pointer;
+      font-size: $arrow-size;
+      left: 1rem;
+      position: absolute;
+      top: 10%;
+    }
+  }
+
+  &__right-arrow-btn {
+    background-color: $btn-bgc;
+    border: 0;
+    border-radius: 50px;
+    height: 5vw;
+    position: absolute;
+    right: 1vw;
+    top: 2.5vw;
+    width: 5vw;
+
+    &__right {
+      color: $arrow-color;
+      cursor: pointer;
+      font-size: $arrow-size;
+      position: absolute;
+      right: 1rem;
+      top: 10%;
+    }
+  }
+}
