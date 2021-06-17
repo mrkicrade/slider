@@ -2,18 +2,23 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  // width: 100%;
   // width: 1200px;
 
-  &__sliders-container {
+  &__slider-container {
     display: flex;
     position: relative;
     text-align: center;
-    width: 100%;
+    // width: 100%;
 
-    // &__slide {
-    //   width: calc(100% / 6);
-    // }
+    &__slide {
+      // align-items: center;
+      margin: 0 5px;
+
+      a {
+        display: block;
+      }
+    }
   }
 }
 

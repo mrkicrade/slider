@@ -1,9 +1,10 @@
 export default function render () {
   this.sliderElement = document.getElementById(this.el);
   this.sliderElement.className = 'slider';
-  this.slidersContainer = document.createElement('div');
-  this.slidersContainer.className = 'slider__sliders-container';
-  this.sliderElement.appendChild(this.slidersContainer);
+  this.sliderContainer = document.createElement('div');
+  this.sliderContainer.className = 'slider__slider-container';
+  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType) - 10}px`
+  this.sliderElement.appendChild(this.sliderContainer);
   this.leftArrowBtn = document.createElement('button');
   this.leftArrowBtn.className = 'slider__left-arrow-btn';
   this.rightArrowBtn = document.createElement('button');
@@ -17,7 +18,8 @@ export default function render () {
   this.leftArrowBtn.style.display = 'none';
   this.data.forEach(slide => {
     const slideImg = document.createElement("img");
-    slideImg.className = 'slider__sliders-container__slide__img';
+    slideImg.className = 'slider__slider-container__slide__img';
+    slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
     slideImg.src = slide.imgUrl;
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;
@@ -27,8 +29,9 @@ export default function render () {
     slideLink.appendChild(slideImg); 
     slideLink.appendChild(slideTitle);
     const slideContainer = document.createElement('div');
-    slideContainer.className = 'slider__sliders-container__slide';
+    slideContainer.className = 'slider__slider-container__slide';
+    slideContainer.style.width = `${this.sliderElement.offsetWidth / this.previewType}px`
     slideContainer.appendChild(slideLink);
-    this.slidersContainer.appendChild(slideContainer);
+    this.sliderContainer.appendChild(slideContainer);
   })
 }
