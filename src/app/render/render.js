@@ -13,12 +13,11 @@ export default function render () {
   this.leftArrow.classList.add('slider__left-arrow-btn__left', 'fas', 'fa-chevron-left');
   this.rightArrow.classList.add('slider__right-arrow-btn__right', 'fas', 'fa-chevron-right');
   this.leftArrowBtn.appendChild(this.leftArrow);
-  // this.sliderElement.append(this.leftArrow);
   this.rightArrowBtn.appendChild(this.rightArrow);
-  // this.sliderElement.append(this.rightArrow);
   this.leftArrowBtn.style.display = 'none';
   this.data.forEach(slide => {
     const slideImg = document.createElement("img");
+    slideImg.className = 'slider__sliders-container__slide__img';
     slideImg.src = slide.imgUrl;
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;
@@ -28,7 +27,7 @@ export default function render () {
     slideLink.appendChild(slideImg); 
     slideLink.appendChild(slideTitle);
     const slideContainer = document.createElement('div');
-    slideContainer.className = 'slider__container';
+    slideContainer.className = 'slider__sliders-container__slide';
     slideContainer.appendChild(slideLink);
     this.slidersContainer.appendChild(slideContainer);
   })

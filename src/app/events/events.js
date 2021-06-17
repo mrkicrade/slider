@@ -4,7 +4,8 @@ export function moveRight () {
   this.slidersContainer.style.transition = '1s';
   this.slidersContainer.style.transform = `translateX(${this.count - 100}%)`;
   this.count -= 100;
-  console.log(this.count);
+  // console.log(this.count);
+  this.checkScreenResolution();
   // if (this.count === -200) {
   //   this.rightArrowBtn.style.display = 'none';
   // }
@@ -19,4 +20,5 @@ export function moveLeft () {
   // if (this.count === 0) {
   //   this.leftArrowBtn.style.display = 'none';
   // }
+  this.checkScreenResolution();
 }

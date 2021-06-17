@@ -1,18 +1,19 @@
 img {
   height: 10vw;
-  width: calc(100vw / 6);
+  object-fit: cover;
+  width: 228px;
 }
 
-@include breakpoint(sm) {
-  img {
-    height: 40vw;
-    width: 100vw;
-  }
-}
+// @include breakpoint(sm) {
+//   img {
+//     height: 40vw;
+//     width: 100vw;
+//   }
+// }
 
-@include breakpoint(md) {
-  img {
-    height: 20vw;
-    width: calc(100vw / 3);
-  }
-}
+// @include breakpoint(md) {
+//   img {
+//     height: 20vw;
+//     width: calc(100vw / 3);
+//   }
+// }
