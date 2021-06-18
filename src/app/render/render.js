@@ -3,7 +3,7 @@ export default function render () {
   this.sliderElement.className = 'slider';
   this.sliderContainer = document.createElement('div');
   this.sliderContainer.className = 'slider__slider-container';
-  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType) - 10}px`
+  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`
   this.sliderElement.appendChild(this.sliderContainer);
   this.leftArrowBtn = document.createElement('button');
   this.leftArrowBtn.className = 'slider__left-arrow-btn';
@@ -20,6 +20,7 @@ export default function render () {
     const slideImg = document.createElement("img");
     slideImg.className = 'slider__slider-container__slide__img';
     slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
+    // slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType - 10)) / 16}px`
     slideImg.src = slide.imgUrl;
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;

@@ -13,7 +13,7 @@
       color: $arrow-color;
       cursor: pointer;
       font-size: $arrow-size;
-      left: 1rem;
+      left: 1vw;
       position: absolute;
       top: 10%;
     }
@@ -34,8 +34,34 @@
       cursor: pointer;
       font-size: $arrow-size;
       position: absolute;
-      right: 1rem;
+      right: 1vw;
       top: 10%;
     }
   }
 }
+
+@include breakpoint(md) {
+  .slider {
+    &__left-arrow-btn {
+      top: 4.5vw;
+    }
+
+    &__right-arrow-btn {
+      top: 4.5vw;
+    }
+  }
+}
+
+// @include breakpoint(sm) {
+//   .slider {
+//     height: 200px;
+
+//     &__left-arrow-btn {
+//       top: 4.5vw;
+//     }
+
+//     &__right-arrow-btn {
+//       top: 4.5vw;
+//     }
+//   }
+// }
