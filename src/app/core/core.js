@@ -7,9 +7,11 @@ export default function initialize () {
     this.checkScreenResolution = checkScreenResolution;
     this.render = render;
     this.render();
-    document.querySelectorAll('img.slider__slider-container__slide__img').forEach(img => {
-        this.imageObserver.observe(img);
-    })
+    if (this.lazyLoad === true) {
+        document.querySelectorAll('img.slider__slider-container__slide__img').forEach(img => {
+            this.imageObserver.observe(img);
+        })
+    }
     this.checkScreenResolution();
     this.moveLeft = moveLeft;
     this.moveRight = moveRight;

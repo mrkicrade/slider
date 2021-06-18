@@ -18,14 +18,14 @@ export default function checkMediaQuery () {
 
   //   if (mediaQueryLg.matches) {
   //     // alert('Media Query LG Matched!')
-  //     if (this.count === (- (2 * (this.sliderElement.offsetWidth)))) {
-  //       this.rightArrowBtn.style.display = 'none';
-  //     }
+      // if (this.count === (- (2 * (this.sliderElement.offsetWidth)))) {
+      //   this.rightArrowBtn.style.display = 'none';
+      // }
   
-  //     if (this.count === 0) {
-  //       this.leftArrowBtn.style.display = 'none';
-  //       this.rightArrowBtn.style.display = 'block';
-  //     }
+      // if (this.count === 0) {
+      //   this.leftArrowBtn.style.display = 'none';
+      //   this.rightArrowBtn.style.display = 'block';
+      // }
   //   }
   
 

@@ -6,13 +6,15 @@ class Slider {
   constructor (el, data, options) {
     this.el = el;
     this.data = data;
-    
+    this.infinity = options.infinity;
+    this.lazyLoad = options.lazyLoad;
     this.leftArrow = document.createElement('i');
     this.rightArrow = document.createElement('i');
     this.count = 0;
+    this.countInfinity = 1;
     this.previewType = 6;
     this.lazy = lazy;
-    this.lazy()
+    this.lazy();
     // this.mediaQuerySm = '(max-width: 767px)';
     // this.mediaQueryMd = '(min-width: 768px)';
     // this.mediaQueryLg = '(min-width: 1024px)';

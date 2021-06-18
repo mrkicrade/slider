@@ -1,3 +1,4 @@
+
 export default function () {
   this.imageObserver = new IntersectionObserver((entries, imgObserver) => {
     entries.forEach((entry) => {

@@ -20,8 +20,11 @@ export default function render () {
     const slideImg = document.createElement("img");
     slideImg.className = 'slider__slider-container__slide__img';
     slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
-    // slideImg.src = slide.imgUrl;
-    slideImg.setAttribute('data-src', slide.imgUrl);
+    if (this.lazyLoad === true) {
+      slideImg.setAttribute('data-src', slide.imgUrl);
+    } else {
+      slideImg.src = slide.imgUrl;
+    }
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;
     const slideLink = document.createElement('a');
