@@ -4,7 +4,7 @@ import checkScreenResolution from '../helper/checkScreenResolution';
 
 export default function initialize () {
     // provera rezolucije checkScreenResolution
-    this.checkScreenResolution = checkScreenResolution;
+    // this.checkScreenResolution = checkScreenResolution;
     this.render = render;
     this.render();
     if (this.lazyLoad === true) {
@@ -12,7 +12,7 @@ export default function initialize () {
             this.imageObserver.observe(img);
         })
     }
-    this.checkScreenResolution();
+    // this.checkScreenResolution();
     this.moveLeft = moveLeft;
     this.moveRight = moveRight;
     this.leftArrow.addEventListener('click', this.moveLeft.bind(this));

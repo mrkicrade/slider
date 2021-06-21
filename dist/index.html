@@ -17,7 +17,7 @@
       fetch('/data/data.json') // увек се учитава овде јер АПИ може да касни
         .then(response => response.json())
         .then(data => { //data je ceo json niz a ne pojedinacni objekat
-          const slider = new Slider("slider", data, {infinity : true, lazyLoad : true}) // slider je el, data je data
+          const slider = new Slider("slider", data, {infinity : false, lazyLoad : true}) // slider je el, data je data
           slider.initialize();
         });
     })
