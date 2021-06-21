@@ -15,11 +15,11 @@ class Slider {
     this.count = 0;
     this.countInfinity = 1;
     this.previewType = 6;
+    this.sliderStart = 0;
+    this.sliderWidth = 0;
+    this.sliderWidthPreview = 0;
     this.lazy = lazy;
     this.lazy();
-    // this.mediaQuerySm = '(max-width: 767px)';
-    // this.mediaQueryMd = '(min-width: 768px)';
-    // this.mediaQueryLg = '(min-width: 1024px)';
     this.initialize = core; // metodu initialize smo premestili u poseban fajl
   }
 }

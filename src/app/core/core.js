@@ -1,18 +1,13 @@
 import { moveRight, moveLeft } from '../events/events';
-import render from '../render/render';
-import checkScreenResolution from '../helper/checkScreenResolution';
+import { render } from '../render/render';
+import { renderSlides } from '../render/render';
 
 export default function initialize () {
     // provera rezolucije checkScreenResolution
-    // this.checkScreenResolution = checkScreenResolution;
     this.render = render;
+    this.renderSlides = renderSlides;
     this.render();
-    if (this.lazyLoad === true) {
-        document.querySelectorAll('img.slider__slider-container__slide__img').forEach(img => {
-            this.imageObserver.observe(img);
-        })
-    }
-    // this.checkScreenResolution();
+    this.renderSlides(this.data);
     this.moveLeft = moveLeft;
     this.moveRight = moveRight;
     this.leftArrow.addEventListener('click', this.moveLeft.bind(this));

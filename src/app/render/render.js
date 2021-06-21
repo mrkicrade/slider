@@ -1,4 +1,4 @@
-export default function render () {
+export function render () {
   this.sliderElement = document.getElementById(this.el);
   this.sliderElement.className = 'slider';
   this.checkScreenResolution();
@@ -17,7 +17,13 @@ export default function render () {
   this.leftArrowBtn.appendChild(this.leftArrow);
   this.rightArrowBtn.appendChild(this.rightArrow);
   this.leftArrowBtn.style.display = 'none';
-  this.data.forEach(slide => {
+  // renderSlides(this.data).bind(this);
+}
+
+export function renderSlides (data) {
+  console.log(this);
+  console.log(data);
+  data.forEach(slide => {
     const slideImg = document.createElement("img");
     slideImg.className = 'slider__slider-container__slide__img';
     slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
@@ -25,6 +31,9 @@ export default function render () {
       slideImg.setAttribute('data-src', slide.imgUrl);
     } else {
       slideImg.src = slide.imgUrl;
+    }
+    if (this.lazyLoad === true) {
+      this.imageObserver.observe(slideImg);
     }
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;
@@ -39,4 +48,7 @@ export default function render () {
     slideContainer.appendChild(slideLink);
     this.sliderContainer.appendChild(slideContainer);
   })
+  this.sliderWidth = this.sliderContainer.offsetWidth;
+  this.sliderWidthPreview = this.sliderContainer.offsetWidth / (this.data.length / this.previewType);
+  
 }
