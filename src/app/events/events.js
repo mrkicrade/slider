@@ -2,13 +2,19 @@ export function moveRight () {
   this.countInfinity++;
   this.leftArrowBtn.style.display = 'block';
   const matrix = new WebKitCSSMatrix(this.sliderContainer.style.transform);
-  console.log('translateX: ', matrix);
   this.sliderContainer.style.transform = `translateX(${matrix.m41 - this.sliderElement.offsetWidth}px)`;
 
-  if (this.countInfinity * this.sliderElement.offsetWidth >= this.data.length * (this.sliderElement.offsetWidth / this.previewType)) {
-    this.dataInfinity.forEach(el => this.data.push(el));
-    this.renderSlides(this.dataInfinity);
+  if (this.infinity === true) {
+    if (this.countInfinity * this.sliderElement.offsetWidth >= this.data.length * (this.sliderElement.offsetWidth / this.previewType)) {
+      this.dataInfinity.forEach(el => this.data.push(el));
+      this.renderSlides(this.dataInfinity);
+    }
+  } else {
+    if (this.countInfinity === this.data.length / this.previewType -1) {
+      this.rightArrowBtn.style.display = 'none';
+    }
   }
+
 }
 
 export function moveLeft () {
