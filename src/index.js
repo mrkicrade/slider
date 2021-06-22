@@ -13,9 +13,9 @@ class Slider {
     this.leftArrow = document.createElement('i');
     this.rightArrow = document.createElement('i');
     this.count = 0;
-    this.countInfinity = 1;
+    this.countInfinity = 0;
     this.previewType = 6;
-    this.sliderStart = 0;
+    // this.sliderStart = 0;
     this.sliderWidth = 0;
     this.sliderWidthPreview = 0;
     this.lazy = lazy;

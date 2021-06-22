@@ -3,26 +3,38 @@ import { renderSlides } from "../render/render";
 
 export function moveRight () {
   this.countInfinity++;
+  console.log(this.countInfinity);
+
+  // this.countInfinity++;
   this.leftArrowBtn.style.display = 'block';
-  this.sliderContainer.style.transition = '1s';
+  this.sliderContainer.style.transition = '5s';
   this.sliderContainer.style.transform = `translateX(${this.count - (this.sliderElement.offsetWidth)}px)`;
+  // console.log(this.count - this.sliderElement.offsetWidth);
   this.count = this.count - (this.sliderElement.offsetWidth);
-  console.log(this.count);
+  // this.count = 0;
+  // console.log(this.count);
   // console.log(this.sliderWidth);
   // console.log(this.sliderWidthPreview);
-  this.sliderStart += this.sliderWidthPreview;
-  console.log(this.sliderStart);
+  // this.sliderStart += this.sliderWidthPreview;
+  // console.log(this.sliderStart);
 
-  if (this.sliderStart === this.sliderWidth) {
+  // if (this.sliderStart === this.sliderWidth) {
+  // if (this.count === -2732) {
+  // if (this.count === -this.sliderContainer.offsetWidth) {
+  if (this.countInfinity === this.data.length / this.previewType) {
+    // console.log('radi');
     this.data2 = [...this.data];
     this.data2.forEach(el => this.data.push(el));
     // console.log(this.data);
     // console.log(this.sliderElement);
-    this.sliderStart = 0;
-    this.count = 0;
+    // this.sliderStart = 0;
+    // this.count = 0;
     this.renderSlides(this.data);
-    
   }
+
+  
+    
+  
 
   // if (this.infinity === false) {
   //   if (this.previewType === 6) {
