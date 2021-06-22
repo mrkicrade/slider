@@ -1,10 +1,8 @@
 export function render () {
   this.sliderElement = document.getElementById(this.el);
   this.sliderElement.className = 'slider';
-  this.checkScreenResolution();
   this.sliderContainer = document.createElement('div');
   this.sliderContainer.className = 'slider__slider-container';
-  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`;
   this.sliderElement.appendChild(this.sliderContainer);
   this.leftArrowBtn = document.createElement('button');
   this.leftArrowBtn.className = 'slider__left-arrow-btn';
@@ -17,15 +15,10 @@ export function render () {
   this.leftArrowBtn.appendChild(this.leftArrow);
   this.rightArrowBtn.appendChild(this.rightArrow);
   this.leftArrowBtn.style.display = 'none';
-  // renderSlides(this.data).bind(this);
 }
 
 export function renderSlides (data) {
-  // console.log(data);
-  // console.log(this.count);
   this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`;
-  console.log(this.sliderContainer.style.width);
-  
   data.forEach(slide => {
     const slideImg = document.createElement("img");
     slideImg.className = 'slider__slider-container__slide__img';
@@ -47,12 +40,15 @@ export function renderSlides (data) {
     slideLink.appendChild(slideTitle);
     const slideContainer = document.createElement('div');
     slideContainer.className = 'slider__slider-container__slide';
-    slideContainer.style.width = `${this.sliderElement.offsetWidth / this.previewType}px`;
     slideContainer.appendChild(slideLink);
     this.sliderContainer.appendChild(slideContainer);
   })
-  // this.sliderWidth = this.sliderContainer.offsetWidth;
-  // this.sliderWidthPreview = this.sliderContainer.offsetWidth / (this.data.length / this.previewType);
-  // console.log(this.sliderContainer.style.width);
-  
+}
+
+export function calculateSize () {
+  console.log(this.sliderElement.offsetWidth / this.previewType);
+  document.querySelectorAll('.slider__slider-container__slide').forEach(el => {
+    el.style.width = `${this.sliderElement.offsetWidth / this.previewType}px`;
+    // el.childNodes[0].childNodes[0].style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`;
+  })
 }
