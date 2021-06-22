@@ -52,16 +52,28 @@
   }
 }
 
-// @include breakpoint(sm) {
-//   .slider {
-//     height: 200px;
+@include breakpoint(sm) {
+  .slider {
+    &__left-arrow-btn {
+      height: 10vw;
+      top: 15vw;
+      width: 10vw;
 
-//     &__left-arrow-btn {
-//       top: 4.5vw;
-//     }
+      &__left {
+        font-size: 8vw;
+        left: 2vw;
+      }
+    }
 
-//     &__right-arrow-btn {
-//       top: 4.5vw;
-//     }
-//   }
-// }
+    &__right-arrow-btn {
+      height: 10vw;
+      top: 15vw;
+      width: 10vw;
+
+      &__right {
+        font-size: 8vw;
+        right: 2vw;
+      }
+    }
+  }
+}

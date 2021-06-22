@@ -12,20 +12,6 @@
     &__slide {
       // align-items: center;
       padding: 0 5px;
-
-      a {
-        display: block;
-      }
     }
   }
 }
-
-// @include breakpoint(md) {
-//   .slider {
-//     &__slider-container {
-//       &__slide {
-//         width: 33.3%;
-//       }
-//     }
-//   }
-// }

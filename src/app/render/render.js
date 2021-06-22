@@ -21,7 +21,7 @@ export function renderSlides (data) {
   this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`;
   data.forEach(slide => {
     const slideImg = document.createElement("img");
-    slideImg.className = 'slider__slider-container__slide__img';
+    slideImg.className = 'slider__link__img';
     slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`;
     if (this.lazyLoad === true) {
       slideImg.setAttribute('data-src', slide.imgUrl);
@@ -34,6 +34,7 @@ export function renderSlides (data) {
     const slideTitle = document.createElement('h1');
     slideTitle.innerText = slide.caption;
     const slideLink = document.createElement('a');
+    slideLink.className = 'slider__link'
     slideLink.href = slide.redirectLink;
     slideLink.target = '_blank';
     slideLink.appendChild(slideImg); 

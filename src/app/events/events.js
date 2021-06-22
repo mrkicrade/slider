@@ -14,6 +14,9 @@ export function moveRight () {
 export function moveLeft () {
   // ogranici ako je doslo do kraja da se izgubi strelica
   this.countInfinity--;
+  if (this.countInfinity === 0) {
+    this.leftArrowBtn.style.display = 'none';
+  }
   this.rightArrowBtn.style.display = 'block';
   const matrix = new WebKitCSSMatrix(this.sliderContainer.style.transform);
   this.sliderContainer.style.transform = `translateX(${matrix.m41 + (this.sliderElement.offsetWidth)}px)`;

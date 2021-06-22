@@ -1,18 +1,9 @@
-img {
-  object-fit: cover;
-  width: 100%;
+.slider {
+  &__link {
+    &__img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 }
 
-// @include breakpoint(sm) {
-//   img {
-//     height: 40vw;
-//     width: 100vw;
-//   }
-// }
-
-// @include breakpoint(md) {
-//   img {
-//     height: 20vw;
-//     width: calc(100vw / 3);
-//   }
-// }
