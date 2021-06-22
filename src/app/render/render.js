@@ -40,6 +40,7 @@ export function renderSlides (data) {
     slideLink.appendChild(slideTitle);
     const slideContainer = document.createElement('div');
     slideContainer.className = 'slider__slider-container__slide';
+    slideContainer.style.width = `${this.sliderElement.offsetWidth / this.previewType}px`;
     slideContainer.appendChild(slideLink);
     this.sliderContainer.appendChild(slideContainer);
   })
