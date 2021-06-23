@@ -1,4 +1,4 @@
-import './scss/main.scss'
+// import './scss/main.scss'
 import core from './app/core/core'
 import lazy from './app/lazy/lazy'
 import checkScreenResolution from './app/helper/checkScreenResolution'
