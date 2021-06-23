@@ -47,17 +47,11 @@ export function renderSlides (data) {
   })
 }
 
-export function autoLoad(){
-  if (this.auto === true) {
+export function autoLoad () {
+  if (this.auto) {
     this.rightArrowBtn.style.display = 'none'
     setInterval(() => {
-      this.countInfinity++
-      const matrix = new WebKitCSSMatrix(this.sliderContainer.style.transform)
-      this.sliderContainer.style.transform = `translateX(${matrix.m41 - this.sliderElement.offsetWidth}px)`
-      if (this.countInfinity * this.sliderElement.offsetWidth >= this.data.length * (this.sliderElement.offsetWidth / this.previewType)) {
-        this.dataInfinity.forEach(el => this.data.push(el))
-        this.renderSlides(this.dataInfinity)
-      }
+      this.moveRight()
     } , 3000)
   }
 }
