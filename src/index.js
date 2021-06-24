@@ -1,12 +1,12 @@
 import core from './app/core/core'
 import lazy from './app/lazy/lazy'
 import checkScreenResolution from './app/helper/checkScreenResolution'
+// import { httpService } from './app/service/axios'
 
 class Slider {
-  constructor (el, data, options) {
+  // constructor (el, data, options) {
+  constructor (el, api, options) {
     this.el = el
-    this.data = data
-    this.dataInfinity = [...this.data]
     this.checkScreenResolution = checkScreenResolution
     this.infinity = options.infinity
     this.lazyLoad = options.lazyLoad

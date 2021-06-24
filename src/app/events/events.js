@@ -5,12 +5,12 @@ export function moveRight () {
   this.sliderContainer.style.transform = `translateX(${matrix.m41 - this.sliderElement.offsetWidth}px)`
 
   if (this.infinity === true) {
-    if (this.countInfinity * this.sliderElement.offsetWidth >= this.data.length * (this.sliderElement.offsetWidth / this.previewType)) {
+    if (this.countInfinity * this.sliderElement.offsetWidth >= this.api.length * (this.sliderElement.offsetWidth / this.previewType)) {
       this.dataInfinity.forEach(el => this.data.push(el))
       this.renderSlides(this.dataInfinity)
     }
   } else {
-    if (this.countInfinity === this.data.length / this.previewType -1) {
+    if (this.countInfinity === this.api.length / this.previewType -1) {
       this.rightArrowBtn.style.display = 'none'
     }
   }
@@ -18,7 +18,6 @@ export function moveRight () {
 }
 
 export function moveLeft () {
-  // ogranici ako je doslo do kraja da se izgubi strelica
   this.countInfinity--
   if (this.countInfinity === 0) {
     this.leftArrowBtn.style.display = 'none'

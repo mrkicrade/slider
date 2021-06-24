@@ -18,24 +18,26 @@ export function render () {
 }
 
 export function renderSlides (data) {
-  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`
+  this.sliderContainer.style.width = `${data.length * (this.sliderElement.offsetWidth / this.previewType)}px`
   data.forEach(slide => {
     const slideImg = document.createElement('img')
     slideImg.className = 'slider__link__img'
     slideImg.style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
     if (this.lazyLoad === true) {
-      slideImg.setAttribute('data-src', slide.imgUrl)
+      slideImg.setAttribute('data-src', slide.url)
     } else {
-      slideImg.src = slide.imgUrl
+      slideImg.src = slide.url
     }
     if (this.lazyLoad === true) {
       this.imageObserver.observe(slideImg)
     }
     const slideTitle = document.createElement('h1')
-    slideTitle.innerText = slide.caption
+    // slideTitle.innerText = slide.title
+    slideTitle.innerText = 'Title'
     const slideLink = document.createElement('a')
     slideLink.className = 'slider__link'
-    slideLink.href = slide.redirectLink
+    // slideLink.href = slide.redirectLink
+    slideLink.href = slide.thumbnailUrl
     slideLink.target = '_blank'
     slideLink.appendChild(slideImg) 
     slideLink.appendChild(slideTitle)
@@ -47,7 +49,7 @@ export function renderSlides (data) {
   })
 }
 
-export function autoLoad () {
+export function autoLoad(){
   if (this.auto) {
     this.rightArrowBtn.style.display = 'none'
     setInterval(() => {
@@ -57,7 +59,7 @@ export function autoLoad () {
 }
 
 export function calculateSize () {
-  this.sliderContainer.style.width = `${this.data.length * (this.sliderElement.offsetWidth / this.previewType)}px`
+  this.sliderContainer.style.width = `${this.api.length * (this.sliderElement.offsetWidth / this.previewType)}px`
   document.querySelectorAll('.slider__slider-container__slide').forEach(el => {
     el.style.width = `${this.sliderElement.offsetWidth / this.previewType}px`
     el.childNodes[0].childNodes[0].style.height = `${(9 * (this.sliderElement.offsetWidth / this.previewType)) / 16}px`
